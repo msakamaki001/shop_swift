@@ -22,9 +22,9 @@ class ViewController: UIViewController, UICollectionViewDataSource,
     var userDefault = UserDefaults.standard
     var cartBarButtonItem:UIBarButtonItem?
     var didPrepareMenu = false
-    
     let tabLabelWidth:CGFloat = 100
-    
+    var firstAppear = true
+    var buyResult = -1
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "shop"
@@ -34,6 +34,19 @@ class ViewController: UIViewController, UICollectionViewDataSource,
         self.categories = getCategories()
         self.items = getItems(category_id: self.categories[0].id!)
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if firstAppear {
+            firstAppear = false
+            return
+        }
+        if buyResult == 1 {
+            toast(text: "購入しました")
+        } else if buyResult == 2 {
+            toast(text: "購入失敗しました")
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -73,6 +86,25 @@ class ViewController: UIViewController, UICollectionViewDataSource,
         
         scrollView.contentSize = CGSize(width:originX, height:tabLabelHeight)
         scrollView.frame = CGRect(x: 0, y: (self.navigationController!.navigationBar.frame.size.height)+tabLabelHeight, width: UIScreen.main.bounds.width, height: tabLabelHeight)
+    }
+    
+    func toast(text:String) {
+        let bar = UILabel()
+        let screenWidth = UIScreen.main.bounds.size.width
+        let screenHeight = UIScreen.main.bounds.size.height
+        let barHeight = 60
+        bar.frame = CGRect(x: 0, y: screenHeight-CGFloat(barHeight), width: screenWidth, height: CGFloat(barHeight))
+        bar.alpha = 0.0
+        bar.backgroundColor = .black
+        bar.text = text
+        bar.textColor = .white
+        bar.textAlignment = .center
+        UIView.animate(withDuration: 5, delay: 0.0, options: .curveEaseOut ,animations: { () -> Void in
+            bar.alpha = 1.0
+        }, completion: { _ in
+            bar.removeFromSuperview()
+        })
+        self.view.addSubview(bar)
     }
     
     func getCategories() -> [Category] {
@@ -196,12 +228,12 @@ class ViewController: UIViewController, UICollectionViewDataSource,
 
         alert.addAction(cancelAction)
         alert.addAction(confirmAction)
-
         present(alert, animated: true, completion: nil)
     }
     
     @objc func cartItem(_ sender:UIBarButtonItem) {
         let modal = self.storyboard?.instantiateViewController(identifier: "modal")
+        modal?.modalPresentationStyle = .fullScreen
         present(modal!, animated: true, completion: nil)
     }
 }

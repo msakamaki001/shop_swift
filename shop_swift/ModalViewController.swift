@@ -131,8 +131,15 @@ class ModalViewController: UIViewController , UITableViewDelegate, UITableViewDa
     }
     
     @objc func buy(_ sender:UIButton) {
-        if buyCartItems(cartItems: self.cartItems!) {
+        self.cartItems = self.userDefault.array(forKey: "cartItems") as? [Int]
+        let navi = self.presentingViewController as! UINavigationController
+        let shopView = navi.viewControllers[navi.viewControllers.count - 1] as! ViewController
+        if buyCartItems(cartItems: self.cartItems!) && !cartItems!.isEmpty {
             self.userDefault.set([], forKey: "cartItems")
+            shopView.buyResult = 1
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            shopView.buyResult = 2
             self.dismiss(animated: true, completion: nil)
         }
     }
