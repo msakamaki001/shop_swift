@@ -39,7 +39,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="194" height="196"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k36-cJ-wNa">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k36-cJ-wNa">
                                                     <rect key="frame" x="10" y="167" width="178" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="178" id="e38-yz-Nqc"/>
@@ -218,14 +218,12 @@
                                     <outlet property="prefetchDataSource" destination="4Sz-gE-idm" id="uww-vL-6HY"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXU-9V-pfd">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXU-9V-pfd">
                                 <rect key="frame" x="65" y="813" width="77" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="キャンセル"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tQ-d7-13f">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tQ-d7-13f">
                                 <rect key="frame" x="292" y="813" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="購入"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cxr-oe-FhB">
@@ -235,9 +233,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="スワイプで削除" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwR-j1-oav">
+                                <rect key="frame" x="146" y="777" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g79-WZ-NEQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="g79-WZ-NEQ" firstAttribute="bottom" secondItem="4tQ-d7-13f" secondAttribute="bottom" constant="19" id="Kmz-iV-0hg"/>
+                            <constraint firstItem="g79-WZ-NEQ" firstAttribute="bottom" secondItem="lwR-j1-oav" secondAttribute="bottom" constant="64" id="czz-3l-oBz"/>
+                            <constraint firstItem="g79-WZ-NEQ" firstAttribute="trailing" secondItem="lwR-j1-oav" secondAttribute="trailing" constant="146" id="iRV-Y6-API"/>
+                            <constraint firstItem="g79-WZ-NEQ" firstAttribute="bottom" secondItem="qXU-9V-pfd" secondAttribute="bottom" constant="19" id="uAk-MT-4Bl"/>
+                            <constraint firstItem="g79-WZ-NEQ" firstAttribute="trailing" secondItem="4tQ-d7-13f" secondAttribute="trailing" constant="91" id="v8g-dR-4ln"/>
+                            <constraint firstItem="qXU-9V-pfd" firstAttribute="leading" secondItem="g79-WZ-NEQ" secondAttribute="leading" constant="65" id="xaa-4I-TJO"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="buyButton" destination="4tQ-d7-13f" id="0il-ro-M8L"/>
@@ -254,6 +266,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

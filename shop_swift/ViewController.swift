@@ -171,7 +171,7 @@ class ViewController: UIViewController, UICollectionViewDataSource,
         nameLabel.text = self.items[indexPath.row].name!
         
         let priceLabel = cell.viewWithTag(103) as! UILabel
-        priceLabel.text = self.items[indexPath.row].price?.description
+        priceLabel.text = self.items[indexPath.row].price!.description + "円"
         
         return cell
     }
