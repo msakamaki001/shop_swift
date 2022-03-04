@@ -64,7 +64,7 @@ class ModalViewController: UIViewController , UITableViewDelegate, UITableViewDa
         var isLock = true
         var result:Bool = false
         let params = ["cartItems":cartItems]
-        AF.request("http://localhost/api/buy_cart_items",method: .post,parameters: params)
+        AF.request(Setting.BASE_URL+"/api/buy_cart_items",method: .post,parameters: params)
             .responseData {response in
                 switch response.result {
                     case .success:

@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
     @objc func login(_ sender: UIButton) {
         var isLock = true
         var isSuccess = true
-        AF.request("http://localhost/api/login",method: .post,parameters: ["mail":mail.text,"password":password.text]).responseData(completionHandler: {response in
+        AF.request(Setting.BASE_URL+"/api/login",method: .post,parameters: ["mail":mail.text,"password":password.text]).responseData(completionHandler: {response in
             switch response.result {
                 case .success(let data):
                     do {

@@ -17,6 +17,7 @@
 		F40A5CB927B2412000D43BF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40A5CB827B2412000D43BF3 /* LoginViewController.swift */; };
 		F40A5CBB27B2414E00D43BF3 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40A5CBA27B2414E00D43BF3 /* ModalViewController.swift */; };
 		F40A5CBD27B2415F00D43BF3 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40A5CBC27B2415F00D43BF3 /* Models.swift */; };
+		F4D4223727D26E67006FDC4E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4223627D26E67006FDC4E /* Setting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		F40A5CB827B2412000D43BF3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F40A5CBA27B2414E00D43BF3 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		F40A5CBC27B2415F00D43BF3 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		F4D4223627D26E67006FDC4E /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				F40A5CAD27B23F2200D43BF3 /* Assets.xcassets */,
 				F40A5CAF27B23F2200D43BF3 /* LaunchScreen.storyboard */,
 				F40A5CB227B23F2200D43BF3 /* Info.plist */,
+				F4D4223627D26E67006FDC4E /* Setting.swift */,
 			);
 			path = shop_swift;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				F40A5CBB27B2414E00D43BF3 /* ModalViewController.swift in Sources */,
 				F40A5CA927B23F2100D43BF3 /* ViewController.swift in Sources */,
 				F40A5CBD27B2415F00D43BF3 /* Models.swift in Sources */,
+				F4D4223727D26E67006FDC4E /* Setting.swift in Sources */,
 				F40A5CA527B23F2100D43BF3 /* AppDelegate.swift in Sources */,
 				F40A5CA727B23F2100D43BF3 /* SceneDelegate.swift in Sources */,
 			);

@@ -110,7 +110,7 @@ class ViewController: UIViewController, UICollectionViewDataSource,
     func getCategories() -> [Category] {
         var isLock = true
         var result:[Category] = []
-        AF.request("http://localhost/api/fetch_categories",method: .post)
+        AF.request(Setting.BASE_URL+"/api/fetch_categories",method: .post)
             .responseData {response in
                 switch response.result {
                     case .success(let data):
@@ -135,7 +135,7 @@ class ViewController: UIViewController, UICollectionViewDataSource,
         var isLock = true
         var result:[Item] = []
         let params = ["categoryId":category_id]
-        AF.request("http://localhost/api/fetch_items",method: .post,parameters: params)
+        AF.request(Setting.BASE_URL+"/api/fetch_items",method: .post,parameters: params)
             .responseData {response in
                 switch response.result {
                     case .success(let data):
